@@ -60,14 +60,14 @@ class Rectangle:
 
         if self.__width > 0 and self.__height > 0:
             for y in range(self.__height):
-                rectangle += '#' * self.__width + '\n'
+                rectangle += str(self.print_symbol) * self.__width + '\n'
 
         return rectangle[:-1]
-    
+
     def __repr__(self):
         """Returns an 'official' string representation of an instance"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-    
+
     def __del__(self):
         """Instance method called when an instance is deleted"""
         Rectangle.number_of_instances -= 1
