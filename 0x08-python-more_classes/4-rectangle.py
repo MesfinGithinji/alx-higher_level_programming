@@ -59,7 +59,7 @@ class Rectangle:
                 rectangle += '#' * self.__width + '\n'
 
         return rectangle[:-1]
-    
+
     def __repr__(self):
         """Returns an 'official' string representation of an instance"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)

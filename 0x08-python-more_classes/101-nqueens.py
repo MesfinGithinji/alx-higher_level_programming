@@ -32,7 +32,9 @@ def get_solution(board):
 
 
 def xout(board, row, col):
-    """X out spots where non-attacking queens can no longer be played are X-ed out.
+    """
+    X out spots where non-attacking queens can
+    no longer be played are X-ed out.
     """
     # X out all forward spots
     for c in range(col + 1, len(board)):
