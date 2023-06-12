@@ -9,12 +9,11 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Intializes the Rectangle attributes
         """
-        
+
         super().integer_validator("width", width)
         self.__width = width
         super().integer_validator("height", height)
         self.__height = height
-
 
     def area(self):
         """"Returns area of a rectangle."""
