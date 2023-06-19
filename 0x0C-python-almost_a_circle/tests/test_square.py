@@ -2,12 +2,12 @@
 """Unittest square.
 Test cases for the Square class.
 """
-
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 import unittest
 import io
+import os
 import contextlib
 
 class TestSquare(unittest.TestCase):
@@ -154,7 +154,6 @@ class TestSquare(unittest.TestCase):
               s1 = Square(10, 2, 1, 9)
               s1_dictionary = s1.to_dictionary("Hi")
           self.assertEqual(s, str(x.exception))
-
 
 if __name__ == '__main__':
      unittest.main()

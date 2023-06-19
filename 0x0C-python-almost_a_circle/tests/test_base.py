@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for base.py.
+"""Defines unit tests for base.py.
 
 Unittest classes:
      TestBase_instantiation - line 21
@@ -19,7 +19,7 @@ from models.square import Square
 
 
 class TestBase_instantiation(unittest.TestCase):
-     """Unittests for testing instantiation of the Base class."""
+     """Unit tests for testing instantiation of the Base class."""
 
      def test_no_arg(self):
          b1 = Base()
