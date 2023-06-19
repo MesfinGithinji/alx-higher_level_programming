@@ -6,6 +6,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Represents a square"""
+
     def __init__(self, size, x=0, y=0, id=None):
         self.size = size
         self.x = x
@@ -17,13 +18,13 @@ class Square(Rectangle):
         """Defines a format for the string representation of the class"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
-    @property #getter for size
+    @property
     def size(self):
         """Gets the value of size"""
         return self.__width
 
     @size.setter
-    def size(self,value):
+    def size(self, value):
         """Sets the value of size"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -48,7 +49,7 @@ class Square(Rectangle):
                 self.y = args[3]
         else:
             """unpacking the dictionary of **kwargs"""
-            for key,value in kwargs.items():
+            for key, value in kwargs.items():
                 if key == "id":
                     if type(value) != int and value is not None:
                         raise TypeError("id must be an integer")
@@ -62,9 +63,9 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Returns the dictionary representation of square """
-        rep_dictionary = {'id':self.id,
-                          'size':self.size,
+        rep_dictionary = {'id': self.id,
+                          'size': self.size,
                           'x': self.x,
-                          'y': self.y,}
+                          'y': self.y, }
 
         return rep_dictionary
