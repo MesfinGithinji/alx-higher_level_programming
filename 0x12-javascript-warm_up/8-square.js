@@ -1,18 +1,18 @@
 #!/usr/bin/node
 
-const args = parseInt(process.argv[2]);
-let pattern = '';
+const args = process.argv[2];
 
-if (isNaN(args)) {
+if (!parseInt(args)) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < args; i++) {
-    for (let x = 0; x < args; x++) {
+    let j = 0;
+    let pattern = '';
+
+    while (j < args) {
       pattern += 'x';
+      j++;
     }
-    if (i !== args - 1) {
-      pattern += '\n';
-    }
+    console.log(pattern);
   }
-  console.log(pattern);
 }
