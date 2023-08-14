@@ -7,7 +7,7 @@ if (!parseInt(args)) {
 } else {
   for (let i = 0; i < args; i++) {
     let j = 0;
-    let pattern = '';
+    let pattern = ' ';
 
     while (j < args) {
       pattern += 'x';
