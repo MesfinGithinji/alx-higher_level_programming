@@ -1,4 +1,4 @@
 #!/usr/bin/node
 
-exports.myVar = 333;
+myVar = 333;
 
