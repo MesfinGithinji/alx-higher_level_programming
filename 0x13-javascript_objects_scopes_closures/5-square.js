@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /**
  * class square defines a square and inherits from Rectangle
- * 
+ *
  */
 const Rectangle = require('./4-rectangle');
 
