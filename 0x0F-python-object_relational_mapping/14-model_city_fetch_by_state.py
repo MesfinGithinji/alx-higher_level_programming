@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 """
-Script adds the State object “Louisiana” to the database
+Script that prints all City objects from the database
 """
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_city import City
 
 if __name__ == "__main__":
 
@@ -19,11 +20,8 @@ if __name__ == "__main__":
     db_session = sessionmaker(bind=eng)
     my_ssn = db_session()
 
-    Base.metadata.create_all(eng)
-
-    new_object = State(name="Louisiana")
-    my_ssn.add(new_object)
-    my_ssn.commit()
-    print(new_object.id)
+    for state, city in my_ssn.query(State, City).filter(
+            State.id == City.state_id).all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     my_ssn.close()
