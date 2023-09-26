@@ -18,32 +18,31 @@ const movieId = process.argv[2];
  */
 const url = `https://swapi.dev/api/films/${movieId}/`;
 
+let characters = [];
+
 request(url, (error, response, body) => {
   if (error) {
-    console.error('Error:', error);
+    console.log(error);
     return;
   }
 
-  const movieData = JSON.parse(body);
-  const characters = movieData.characters;
+  const data = JSON.parse(body);
+  characters = data.characters;
+  getCharacters(0);
+});
 
-  function printCharacter (index) {
-    if (index === characters.length) {
-      return;
-    }
-
-    request(characters[index], (charError, charResponse, charBody) => {
-      if (charError) {
-        console.error('Error fetching character:', charError);
-        return;
-      }
-
-      const characterData = JSON.parse(charBody);
-      console.log(characterData.name);
-      printCharacter(index + 1);
-    });
+const getCharacters = (index) => {
+  if (index === characters.length) {
+    return;
   }
 
-  console.log(`Characters in ${movieData.title}:`);
-  printCharacter(0);
-});
+  request(characters[index], (error, response, body) => {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    const characterData = JSON.parse(body);
+    console.log(characterData.name);
+    getCharacters(index + 1);
+  });
+};
