@@ -14,7 +14,7 @@ const apiUrl = process.argv[2];
 /**
  * Next we need to use our request obj to make the GET request
  * to the specified URL
- * After our response is evaluated we will get back a response
+ * After our request is evaluated we will get back a response
  * The response needs to parsed into a JSON format
  * We will then loop through the data in our object and get the respective tasks using the IDs
  */
