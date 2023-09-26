@@ -20,10 +20,8 @@ const dataValue = process.argv[3];
  * which we will then append into the file provided as a CLI argument as well
  * we will also be checking for any errors within the writing process
  */
-fsObj.writeFile(fileName, dataValue, 'utf-8', (error, content) => {
+fsObj.writeFile(fileName, dataValue, 'utf-8', error => {
   if (error) {
-    console.error(error);
-    return;
+    console.log(error);
   }
-  console.log(content);
 });
